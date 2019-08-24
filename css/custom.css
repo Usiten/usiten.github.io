@@ -1,0 +1,70 @@
+body {
+	background-color: rgb(50, 50, 50);
+}
+
+.container a {
+	background-color: rgb(50, 50, 50);
+	border: 1ps solid white;
+	color: white;
+	transition: all .1s;
+}
+
+#reddit:hover {
+	border: 1px solid darkorange;
+	background-color: darkorange;
+	color: white;
+}
+
+#youtube:hover {
+	border: 1px solid crimson;
+	background-color: crimson;
+	color: white;
+}
+
+#twitch:hover {
+	border: 1px solid rgb(145, 23, 145);
+	background-color: rgb(145, 23, 145);
+	color: white;
+}
+
+#facebook:hover {
+	border: 1px solid royalblue;
+	background-color: royalblue;
+	color: white;
+}
+
+#twitter:hover {
+	border: 1px solid skyblue;
+	background-color: skyblue;
+	color: white;
+}
+
+#gmail:hover {
+	border: 1px solid rgb(201, 53, 53);
+	background-color: rgb(201, 53, 53);
+	color: white;
+}
+
+#orange:hover {
+	border: 1px solid orangered;
+	background-color: orangered;
+	color: white;
+}
+
+#github:hover {
+	border: 1px solid gray;
+	background-color: gray;
+	color: white;
+}
+
+#gitlab:hover {
+	border: 1px solid tomato;
+	background-color: tomato;
+	color: white;
+}
+
+#replit:hover {
+	border: 1px solid lightsteelblue;
+	background-color: lightsteelblue;
+	color: white;
+}

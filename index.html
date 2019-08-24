@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Home</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+	<!-- Favicon
+	––––––––––––––––––––––––––––––––––––––––––––––––––
+	<link rel="icon" type="image/png" href="images/favicon.png">  -->
+
+</head>
+<body>
+
+	<!-- Primary Page Layout
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<div style="margin-top: 25%">
+			<a class="button" id="reddit" href="https://reddit.com">Reddit</a>
+			<a class="button" id="youtube" href="https://youtube.com">Youtube</a>
+			<a class="button" id="twitch" href="https://twitch.tv">Twitch</a>
+			<a class="button" id="facebook" href="https://facebook.com">Facebook</a>
+			<a class="button" id="twitter" href="https://twitter.com">Twitter</a>
+		</div>
+		<div style="margin-top: 1%">
+			<a class="button" id="gmail" href="https://gmail.com">Gmail</a>
+			<a class="button" id="orange" href="https://webmail1e.orange.fr/webmail/fr_RE/inbox.html">Orange</a>
+		</div>
+		<div style="margin-top: 1%">
+			<a class="button" id="github" href="https://github.com">Github</a>
+			<a class="button" id="gitlab" href="https://gitlab.com">GitLab</a>
+			<a class="button" id="replit" href="https://repl.it">Repl.it</a>
+		</div>
+		<div style="margin-top: 1%"></div>
+			<a class="button button-primary" id="datetime" href="#"></a>
+		</div>
+	</div>
+
+	<script src="fmt.js"></script>
+	<script>
+		function tm()
+		{
+			var now = Date.now();
+			document.getElementById('datetime').innerHTML = dateFormat(now, "dddd, dd mmmm yyyy, HH:MM:ss");
+		}
+
+		tm();
+		setInterval(tm, 1000);
+
+	</script>
+</body>
+</html>
