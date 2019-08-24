@@ -10,8 +10,8 @@ body {
 }
 
 #reddit:hover {
-	border: 1px solid darkorange;
-	background-color: darkorange;
+	border: 1px solid orangered;
+	background-color: orangered;
 	color: white;
 }
 
@@ -46,8 +46,8 @@ body {
 }
 
 #orange:hover {
-	border: 1px solid orangered;
-	background-color: orangered;
+	border: 1px solid darkorange;
+	background-color: darkorange;
 	color: white;
 }
 
