@@ -72,25 +72,21 @@ body {
 #browse {
 	background: steelblue;
 	border: 1px solid steelblue;
-	border-bottom: 2px solid white;
 }
 
 #code {
 	background: steelblue;
 	border: 1px solid steelblue;
-	border-bottom: 2px solid white;
 }
 
 #mail {
 	background: steelblue;
 	border: 1px solid steelblue;
-	border-bottom: 2px solid white;
 }
 
 #datetime {
 	background: steelblue;
 	border: 1px solid steelblue;
-	border-bottom: 2px solid white;
 }
 
 #mail:hover,#code:hover,#browse:hover,#datetime:hover { color: white; }
