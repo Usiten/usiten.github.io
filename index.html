@@ -1,93 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<!-- Basic Page Needs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta charset="utf-8">
 	<title>Home</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
-
 	<!-- Mobile Specific Metas
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<!-- FONT
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 	<!-- CSS
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/custom.css">
-
 	<!-- Favicon
 	––––––––––––––––––––––––––––––––––––––––––––––––––
 	<link rel="icon" type="image/png" href="images/favicon.png">  -->
-
 </head>
 <body>
-
 	<!-- Primary Page Layout
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
 		<div style="margin-top: 25%">
 			<input name='google' class="u-full-width" type="text" placeholder="Google search" id="google" autofocus>
 		</div>
-		<div style="margin-top: 3%">
-			<a class="button " id='browse' href="#">Browse</a>
-			<a class="button" id="reddit" href="https://reddit.com">Reddit</a>
-			<a class="button" id="youtube" href="https://youtube.com">Youtube</a>
-			<a class="button" id="twitch" href="https://twitch.tv">Twitch</a>
-			<a class="button" id="facebook" href="https://facebook.com">Facebook</a>
-			<a class="button" id="twitter" href="https://twitter.com">Twitter</a>
-		</div>
+	</div>
+	<div class="container">
 		<div style="margin-top: 1%">
-			<a class="button " id='mail' href="#">Mail</a>
-			<a class="button" id="gmail" href="https://gmail.com">Gmail</a>
-			<a class="button" id="orange" href="https://webmail1e.orange.fr/webmail/fr_RE/inbox.html">Orange</a>
-		</div>
-		<div style="margin-top: 1%">
-			<a class="button" id='code' href="#">Code</a>
-			<a class="button" id="github" href="https://github.com">Github</a>
-			<a class="button" id="gitlab" href="https://gitlab.com">GitLab</a>
-			<a class="button" id="replit" href="https://repl.it">Repl.it</a>
-		</div>
-		<div style="margin-top: 1%">
-			<a class="button" id='more' href="#">More</a>
-			<a class="button" id="amazon" href="https://amazon.fr">Amazon Fr</a>
-			<a class="button" id="amazonus" href="https://amazon.com">Amazon Us</a>
-			<a class="button" id="netflix" href="https://netflix.com">Netflix</a>
-		</div>
-		<div style="margin-top: 1%"></div>
 			<a class="button" id="datetime" href="#"></a>
 		</div>
 	</div>
 
 	<script src="fmt.js"></script>
 	<script>
+		function AddLink(Super, Whats) {
+			div = document.createElement('div');
+			div.style = 'margin-top: 1%';
+
+			sup = document.createElement('a');
+			sup.href = '#';
+			sup.innerHTML = Super;
+			sup.setAttribute('class', 'button');
+			sup.setAttribute('id', 'more');
+
+			div.appendChild(sup);
+
+			Whats.forEach(element => {
+				sup = document.createElement('a');
+				sup.href = element[1];
+				sup.innerHTML = element[0];
+				if (element[2] !== undefined)
+				{
+					sup.innerHTML = sup.innerHTML.replace(element[2], `<span class='idx'">${element[2]}</span>`);
+				}
+				sup.setAttribute('id', element[0]);
+
+				if (element[2] !== undefined)
+				{
+					window.addEventListener('keyup', function (event) {
+						if (event.key === element[2]) {
+							document.getElementById(element[0]).click();
+						}
+					});
+				}
+
+				sup.setAttribute('class', 'button');
+				div.appendChild(sup);
+			});
+
+			document.getElementsByClassName('container')[0].appendChild(div);
+		}
+
+		function AddLinks(Links) {
+			Object.keys(Links).forEach(element => {
+				AddLink(element, Links[element]);
+			});
+		}
+
+		AddLinks({
+			'Browse': [
+				['reddit', 'https://reddit.com', 'r'],
+				['youtube', 'https://youtube.com', 'y'],
+				['twitch', 'https://twitch.tv', 't'],
+				['facebook', 'https://facebook.com', 'f'],
+				['twitter', 'https://twitter.com', 'w'],
+				['netflix', 'https://netflix.com', 'n']
+			],
+			'Mail': [
+				['gmail', 'https://gmail.com', 'g'],
+				['orange', 'https://webmail1e.orange.fr/webmail/fr_RE/inbox.html', 'o'],
+			],
+			'Code': [
+				['Github', 'https://github.com', 'h'],
+				['Gitlab', 'https://gitlab.com', 'l'],
+				['Repl.it', 'https://repl.it', 'i'],
+			],
+			'More': [
+				['amazon FR', 'https://amazon.fr', 'a'],
+				['amazon us', 'https://amazon.com', 'u'],
+			]
+		});
+
+
 		var input = document.getElementById("google");
-		input.addEventListener("keyup", function(event)
-		{
+		input.value = "";
+		input.addEventListener("keyup", function (event) {
 			let rg = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g
 			let val = document.getElementById("google").value;
 			val = val.trim();
 			if (val === "") return;
 			let params = val.split(" ").join("+");
 			let url = "https://www.google.com/search?q=" + params;
-			if (event.which === 13)
-			{
+			if (event.which === 13) {
 				event.preventDefault();
-				if (val.match(rg))
-				{
+				if (val.match(rg)) {
 					console.log(val)
 					if (val.startsWith('http'))
-					{
 						window.location.replace(val);
-					}
 					else
 						window.location.replace('https://' + val);
 				}
@@ -96,22 +131,20 @@
 			}
 		});
 
-		window.addEventListener('keyup', function(event) {
-			if (event.which == 83)
-			{
+		window.addEventListener('keyup', function (event) {
+			if (event.which == 83) {
 				input.focus();
 			}
 		});
 
-		function ClockReset()
-		{
+		function ClockReset() {
 			var now = Date.now();
 			document.getElementById('datetime').innerHTML = dateFormat(now, "dddd, dd mmmm yyyy, HH:MM:ss");
 		}
-
 		ClockReset();
 		setInterval(ClockReset, 1000);
 
 	</script>
 </body>
+
 </html>

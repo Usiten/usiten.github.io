@@ -9,108 +9,23 @@ body {
 	transition: all .1s;
 }
 
-#reddit:hover {
-	border: 1px solid orangered;
-	background-color: orangered;
-	color: white;
+#more, #datetime {
+	background: steelblue;
+	border: 1px solid steelblue;
 }
 
-#youtube:hover {
-	border: 1px solid crimson;
-	background-color: crimson;
-	color: white;
+#more:hover, #datetime:hover { color: white; }
+
+.button {
+	margin-right: 1.5%;
 }
 
-#twitch:hover {
-	border: 1px solid rgb(145, 23, 145);
-	background-color: rgb(145, 23, 145);
-	color: white;
-}
-
-#facebook:hover {
-	border: 1px solid royalblue;
+.button:hover {
 	background-color: royalblue;
+	border: 1px solid cornflowerblue;
 	color: white;
 }
 
-#twitter:hover {
-	border: 1px solid skyblue;
-	background-color: skyblue;
-	color: white;
+.idx {
+	color: rgb(135, 99, 207);
 }
-
-#gmail:hover {
-	border: 1px solid rgb(201, 53, 53);
-	background-color: rgb(201, 53, 53);
-	color: white;
-}
-
-#orange:hover {
-	border: 1px solid darkorange;
-	background-color: darkorange;
-	color: white;
-}
-
-#github:hover {
-	border: 1px solid slategray;
-	background-color: slategray;
-	color: white;
-}
-
-#gitlab:hover {
-	border: 1px solid tomato;
-	background-color: tomato;
-	color: white;
-}
-
-#replit:hover {
-	border: 1px solid lightsteelblue;
-	background-color: lightsteelblue;
-	color: white;
-}
-
-#amazon:hover {
-	border: 1px solid tan;
-	background-color: tan;
-	color: white;
-}
-
-#amazonus:hover {
-	border: 1px solid thistle;
-	background-color: thistle;
-	color: white;
-}
-
-#netflix:hover {
-	border: 1px solid rgb(218, 50, 50);
-	background-color: rgb(218, 50, 50);
-	color: white;
-}
-
-
-#browse {
-	background: steelblue;
-	border: 1px solid steelblue;
-}
-
-#code {
-	background: steelblue;
-	border: 1px solid steelblue;
-}
-
-#mail {
-	background: steelblue;
-	border: 1px solid steelblue;
-}
-
-#datetime {
-	background: steelblue;
-	border: 1px solid steelblue;
-}
-
-#more {
-	background: steelblue;
-	border: 1px solid steelblue;
-}
-
-#mail:hover,#code:hover,#browse:hover,#datetime:hover,#more:hover { color: white; }
