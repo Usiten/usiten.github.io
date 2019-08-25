@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<!-- Basic Page Needs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -23,6 +24,7 @@
 	––––––––––––––––––––––––––––––––––––––––––––––––––
 	<link rel="icon" type="image/png" href="images/favicon.png">  -->
 </head>
+
 <body>
 	<!-- Primary Page Layout
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,6 +38,7 @@
 			<a class="button" id="datetime" href="#"></a>
 		</div>
 	</div>
+	<p id='nl'></p>
 
 	<script src="fmt.js"></script>
 	<script>
@@ -55,16 +58,14 @@
 				sup = document.createElement('a');
 				sup.href = element[1];
 				sup.innerHTML = element[0];
-				if (element[2] !== undefined)
-				{
+				if (element[2] !== undefined) {
 					sup.innerHTML = sup.innerHTML.replace(element[2], `<span class='idx'">${element[2]}</span>`);
 				}
 				sup.setAttribute('id', element[0]);
 
-				if (element[2] !== undefined)
-				{
+				if (element[2] !== undefined) {
 					window.addEventListener('keyup', function (event) {
-						if (event.key === element[2]) {
+						if (event.key === element[2] && document.getElementById("google") !== document.activeElement) {
 							document.getElementById(element[0]).click();
 						}
 					});
@@ -134,6 +135,12 @@
 		window.addEventListener('keyup', function (event) {
 			if (event.which == 83) {
 				input.focus();
+			}
+		});
+
+		window.addEventListener('keyup', function (event) {
+			if (event.which == 27) {
+				document.getElementById('datetime').focus();
 			}
 		});
 
