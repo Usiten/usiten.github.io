@@ -69,6 +69,25 @@ body {
 	color: white;
 }
 
+#amazon:hover {
+	border: 1px solid tan;
+	background-color: tan;
+	color: white;
+}
+
+#amazonus:hover {
+	border: 1px solid thistle;
+	background-color: thistle;
+	color: white;
+}
+
+#netflix:hover {
+	border: 1px solid rgb(218, 50, 50);
+	background-color: rgb(218, 50, 50);
+	color: white;
+}
+
+
 #browse {
 	background: steelblue;
 	border: 1px solid steelblue;
@@ -89,4 +108,9 @@ body {
 	border: 1px solid steelblue;
 }
 
-#mail:hover,#code:hover,#browse:hover,#datetime:hover { color: white; }
+#more {
+	background: steelblue;
+	border: 1px solid steelblue;
+}
+
+#mail:hover,#code:hover,#browse:hover,#datetime:hover,#more:hover { color: white; }
