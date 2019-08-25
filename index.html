@@ -35,6 +35,9 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
 		<div style="margin-top: 25%">
+			<input name='google' class="u-full-width" type="text" placeholder="Google search" id="google" autofocus>
+		</div>
+		<div style="margin-top: 1%">
 			<a class="button " id='browse' href="#">Browse</a>
 			<a class="button" id="reddit" href="https://reddit.com">Reddit</a>
 			<a class="button" id="youtube" href="https://youtube.com">Youtube</a>
@@ -66,14 +69,46 @@
 
 	<script src="fmt.js"></script>
 	<script>
-		function tm()
+		var input = document.getElementById("google");
+		input.addEventListener("keyup", function(event)
+		{
+			let rg = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g
+			let val = document.getElementById("google").value;
+			let params = val.split(" ").join("+");
+			let url = "https://www.google.com/search?q=" + params;
+			if (event.which === 13)
+			{
+				event.preventDefault();
+				if (val.match(rg))
+				{
+					console.log(val)
+					if (val.startsWith('http'))
+					{
+						window.location.replace(val);
+					}
+					else
+						window.location.replace('https://' + val);
+				}
+				else
+					window.location.replace(`https://www.google.com/search?q=${params}`);
+			}
+		});
+
+		window.addEventListener('keyup', function(event) {
+			if (event.which == 83)
+			{
+				input.focus();
+			}
+		});
+
+		function ClockReset()
 		{
 			var now = Date.now();
 			document.getElementById('datetime').innerHTML = dateFormat(now, "dddd, dd mmmm yyyy, HH:MM:ss");
 		}
 
-		tm();
-		setInterval(tm, 1000);
+		ClockReset();
+		setInterval(ClockReset, 1000);
 
 	</script>
 </body>
