@@ -32,6 +32,12 @@ body {
 	color: white;
 }
 
+.button:focus {
+	background-color: initial;
+	border: 1px solid royalblue;
+	color: white;
+}
+
 .idx {
 	color: rgb(135, 99, 207);
 }
